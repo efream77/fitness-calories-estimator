@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Prediction History</title>
+  <style>
+    table.data {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    table.data th, table.data td {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+    table.data tr:nth-child(even) { background-color: #f2f2f2; }
+    table.data th { background-color: #4CAF50; color: white; }
+  </style>
+</head>
+<body>
+  <h1>Prediction History</h1>
+  {% for table in tables %}
+    {{ table | safe }}
+  {% endfor %}
+  <br>
+  <a href="/">Back to Form</a>
+</body>
+</html>

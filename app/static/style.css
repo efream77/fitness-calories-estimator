@@ -1,0 +1,30 @@
+body {
+    background-color: #2664a2;
+    color: #347d80;
+    font-family: Arial, sans-serif;
+}
+
+input, select, button {
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.card {
+    border-radius: 15px;
+}
+
+body.dark-mode {
+    background-color: #070813;
+    color: #4f2c52;
+}
+
+body.dark-mode input, 
+body.dark-mode select, 
+body.dark-mode button {
+    background-color: #3e84ca;
+    color: #2e1f56;
+}

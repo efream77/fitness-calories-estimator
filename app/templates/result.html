@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<div class="container mt-5">
+    <div class="card shadow p-4">
+        <h2 class="card-title text-center mb-4">Your Estimated Calories Burned</h2>
+        <h1 id="calories">0</h1>
+        <canvas id="caloriesChart" class="mt-4"></canvas>
+        <br>
+        <a href="/" class="btn btn-primary w-100 mt-3">Predict Again</a>
+        <a href="/download" class="btn btn-success w-100 mt-2">Download Predictions</a>
+    </div>
+</div>
+
+<script>
+let calories = {{ calories }};
+let counter = 0;
+let interval = setInterval(() => {
+    if (counter >= calories) clearInterval(interval);
+    document.getElementById("calories").innerText = counter.toFixed(2);
+    counter += 1;
+}, 10);
+
+const ctx = document.getElementById('caloriesChart').getContext('2d');
+new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: {{ durations | safe }},
+        datasets: [{
+            label: 'Calories vs Duration',
+            data: {{ calories_values | safe }},
+            borderColor: 'rgba(75, 192, 192, 1)',
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            fill: true,
+            tension: 0.3
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: { display: true },
+            tooltip: { enabled: true }
+        },
+        scales: {
+            y: { beginAtZero: true }
+        }
+    }
+});
+</script>
+
+</body>
+</html>

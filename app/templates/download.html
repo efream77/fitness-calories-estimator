@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Download Predictions</title>
+</head>
+<body>
+    <h1>Download Your Predictions</h1>
+    {% if file_exists %}
+        <a href="{{ url_for('static', filename='user_predictions.csv') }}" download>Download CSV</a>
+    {% else %}
+        <p>No predictions saved yet.</p>
+    {% endif %}
+    <br><br>
+    <a href="/">Back to Home</a>
+</body>
+</html>

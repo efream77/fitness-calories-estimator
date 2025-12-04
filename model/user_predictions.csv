@@ -1,0 +1,10 @@
+Age,Gender,Height,Weight,Duration,Heart_Rate,Body_Temp,Activity,Predicted_Calories
+28.0,Male,6.0,170.0,30.0,120.0,100.0,Running,228.8
+28.0,Male,6.0,170.0,30.0,120.0,97.0,Running,217.55
+28.0,Male,6.0,170.0,120.0,120.0,100.0,Running,283.25
+28.0,Male,185.0,175.0,200.0,120.0,100.0,Running,295.9
+28.0,Male,6.0,170.0,200.0,50.0,100.0,Running,286.45
+28.0,Male,6.0,170.0,200.0,130.0,100.0,Running,404.55
+1.0,Male,5.7,120.0,30.0,80.0,100.0,Running,237.7
+28.0,Male,6.0,170.0,300.0,100.0,100.0,Running,286.45
+30.0,Male,6.0,180.0,230.0,100.0,100.0,Running,308.4
